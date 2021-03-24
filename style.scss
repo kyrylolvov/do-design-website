@@ -1,0 +1,180 @@
+// Typography
+$font: Avenir Next Cyr;
+
+// Colors
+$preloaderGray: #181818;
+$colorWhite: white;
+$hoverGray: #bebebe;
+
+// Styles
+body {
+  font-family: $font;
+  height: 100vh;
+  margin: 0;
+  background-color: $preloaderGray;
+}
+.preloader-dots {
+  margin: 0;
+  background-color: $preloaderGray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: none;
+}
+.loader-ellips {
+  font-size: 20px; /* change size here */
+  position: relative;
+  width: 4em;
+  height: 1em;
+}
+
+.loader-ellips__dot {
+  display: block;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.5em;
+  background: $colorWhite; /* change color here */
+  position: absolute;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+.loader-ellips__dot:nth-child(1),
+.loader-ellips__dot:nth-child(2) {
+  left: 0;
+}
+.loader-ellips__dot:nth-child(3) {
+  left: 1.5em;
+}
+.loader-ellips__dot:nth-child(4) {
+  left: 3em;
+}
+
+@keyframes reveal {
+  from {
+    transform: scale(0.001);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes slide {
+  to {
+    transform: translateX(1.5em);
+  }
+}
+
+.loader-ellips__dot:nth-child(1) {
+  animation-name: reveal;
+}
+
+.loader-ellips__dot:nth-child(2),
+.loader-ellips__dot:nth-child(3) {
+  animation-name: slide;
+}
+
+.loader-ellips__dot:nth-child(4) {
+  animation-name: reveal;
+  animation-direction: reverse;
+}
+
+.header-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+ul li:not(:last-child) {
+  margin: 0 32px 0 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $colorWhite;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.nav-link-active {
+  color: $hoverGray;
+  cursor: default;
+}
+
+.nav-link:hover {
+  color: $hoverGray;
+}
+
+.header-logo {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $colorWhite;
+  font-size: 1.5rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.about-us-sectiion {
+  text-align: center;
+  color: white;
+  width: 80vw;
+}
+
+.section-header {
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.section-line {
+  width: 50px;
+  margin-bottom: 40px;
+}
+
+.read-more {
+  margin: 0 0 100px 0;
+}
+
+.read-more-header {
+  text-align: left;
+  font-weight: 400;
+}
+
+.read-more-paragraph {
+  text-align: left;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.link-button {
+  width: 100%;
+  max-width: 220px;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #fff;
+  transition: 0.3s all;
+}
+
+.link-button:hover {
+  background-color: white;
+  color: $preloaderGray;
+}
