@@ -9,9 +9,12 @@ $hoverGray: #bebebe;
 // Styles
 body {
   font-family: $font;
-  height: 100vh;
   margin: 0;
   background-color: $preloaderGray;
+  overflow-x: hidden;
+  color: white;
+  font-weight: 300;
+  font-size: 1rem;
 }
 .preloader-dots {
   margin: 0;
@@ -126,6 +129,8 @@ ul li:not(:last-child) {
 main {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .about-us-sectiion {
@@ -137,6 +142,8 @@ main {
 .section-header {
   font-weight: 100;
   text-transform: uppercase;
+  color: white;
+  text-align: center;
 }
 
 .section-line {
@@ -174,7 +181,159 @@ main {
   transition: 0.3s all;
 }
 
+.read-more-button {
+  text-align: center;
+}
+
 .link-button:hover {
   background-color: white;
   color: $preloaderGray;
 }
+
+.latest-projects {
+  width: 100vw;
+  height: 700px;
+  text-align: center;
+}
+
+.project-item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 25vw;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 400px;
+  margin-bottom: 50px;
+}
+
+.project-item-hyperlink {
+  text-decoration: none;
+  color: white;
+  font-weight: 200;
+}
+.project-item-link {
+  padding: 0;
+  font-size: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  background: rgba(24, 24, 24, 0.5);
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s all;
+}
+
+.project-item-link:hover {
+  background: transparent;
+  color: transparent;
+}
+
+.dropdown-element {
+  padding: 0 20px 20px 20px;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 40px;
+}
+
+.dropdown-text-arrow {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dropdown-visible-text {
+  margin: 0 0 0 30px;
+  font-size: 1.125rem;
+}
+.dropdown-arrow {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+arrowImageOpened {
+  animation: rotationAnimation 0.4s forwards;
+}
+@keyframes rotationAnimation {
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+.arrowImageClosed {
+  animation: rotationAnimationClosed 0.4s forwards;
+}
+@keyframes rotationAnimationClosed {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.arrow-opened {
+  animation: rotationAnimation 0.4s forwards;
+}
+
+.arrow-down {
+  animation: rotationAnimationClosed 0.4s forwards;
+}
+
+.hidden-text {
+  display: none;
+}
+
+.visible-text {
+  display: block;
+  line-height: 1.5;
+}
+
+.dropdown-section {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer {
+  display: flex;
+  margin: 150px auto 0px auto;
+  padding: 40px 0;
+  border-top: 1px solid #fff;
+  width: 80vw;
+  justify-content: space-between;
+}
+
+.footer-copyright {
+  margin: 0;
+}
+
+.footer-menu,
+.footer-contact,
+.footer-social-media {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-menu .menu-point {
+  margin: 0 0 10px 0;
+}
+
+.footer-social-media .menu-point {
+  margin: 0 0 10px 0;
+}
+
+.footer-contact .menu-point {
+  margin: 0 0 10px 0;
+}
+
+.fab {
+  font-size: 14px;
+  margin-right: 2px;
+}
+
+// Slider
