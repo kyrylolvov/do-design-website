@@ -23,6 +23,9 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow-y: hidden;
+}
+.page-content-wrapper {
   display: none;
 }
 .loader-ellips {
@@ -70,6 +73,27 @@ body {
   }
 }
 
+@keyframes dropdown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.dropdown-invisible {
+  height: 0px;
+  transition: all 0.4s;
+  overflow: hidden;
+}
+
+.dropdown-invisible-open {
+  height: 250px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
 .loader-ellips__dot:nth-child(1) {
   animation-name: reveal;
 }
@@ -84,13 +108,25 @@ body {
   animation-direction: reverse;
 }
 
+.header-menu-wrapper {
+  position: fixed;
+  width: 100vw;
+  z-index: 5;
+  transition: all 0.4s;
+}
 .header-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px;
+  padding: 30px 50px;
+  transition: all 0.4s;
 }
-
+.header-menu-sticky {
+  padding: 20px 50px;
+}
+.header-menu-wrapper-sticky {
+  background-color: $preloaderGray;
+}
 ul {
   list-style: none;
   padding: 0;
@@ -337,3 +373,41 @@ footer {
 }
 
 // Slider
+.slick-slide-item {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-repeat: no-repeat;
+}
+.slider-1 {
+  background: url(/Images/design4.jpg);
+  background-size: cover;
+}
+.slider-2 {
+  background: url(/Images/design8.jpg);
+  background-size: cover;
+}
+.slider-3 {
+  background: url(/Images/design6.jpg);
+  background-size: cover;
+}
+.slider-slide {
+  padding: 0;
+  font-size: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  background: rgba(24, 24, 24, 0.5);
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+.slider-slide-title {
+  text-decoration: none;
+  color: white;
+  font-weight: 200;
+  outline: none;
+  font-size: 3rem;
+}
