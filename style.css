@@ -8,6 +8,10 @@ body {
   font-size: 1rem;
 }
 
+.body-noscroll {
+  overflow-y: hidden;
+}
+
 .preloader-dots {
   margin: 0;
   background-color: #181818;
@@ -25,6 +29,8 @@ body {
 }
 
 .page-content-wrapper {
+  opacity: 1;
+  background-color: #181818;
   display: none;
 }
 
@@ -121,6 +127,101 @@ body {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10200;
+  width: 260px;
+  height: 100%;
+  background-color: #181818;
+  padding: 75px 30px;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-transform: translateX(320px);
+          transform: translateX(320px);
+}
+
+.menu-close-cross {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 45px;
+  right: 50px;
+}
+
+.close-cross-bar {
+  display: block;
+  height: 1px;
+  background-color: white;
+  width: 100%;
+}
+
+.mobile-menu-list .nav-link {
+  font-size: 1.2rem;
+}
+
+.mobile-menu-list {
+  padding-bottom: 10px;
+  border-bottom: 1px white solid;
+}
+
+.mobile-menu-list .menu-point {
+  margin: 0 0 20px 0;
+}
+
+.close-cross-bar:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.close-cross-bar:last-child {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.mobile-menu-contact {
+  padding: 20px 0;
+  border-bottom: 1px white solid;
+}
+
+.mobile-menu-social .footer-social-media {
+  padding: 20px 0;
+}
+
+.footer-social-media .fab {
+  font-size: 19px;
+}
+
+.mobile-menu-social .footer-social-media {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.mobile-menu-social .footer-social-media .menu-point {
+  margin: 0 15px 0 0;
+}
+
+.burger-menu {
+  display: none;
+}
+
+.burger-menu-bar {
+  display: block;
+  width: 2.25rem;
+  height: 1px;
+  width: 22px;
+  background-color: #fff;
+}
+
+.burger-menu-bar:not(:last-child) {
+  margin-bottom: 5px;
 }
 
 .dropdown-invisible {
@@ -299,7 +400,7 @@ main {
 
 .latest-projects {
   width: 100vw;
-  height: 700px;
+  height: 800px;
   text-align: center;
 }
 
@@ -314,7 +415,7 @@ main {
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-  height: 400px;
+  height: 500px;
   margin-bottom: 50px;
 }
 
@@ -475,7 +576,8 @@ footer {
 
 .footer-menu,
 .footer-contact,
-.footer-social-media {
+.footer-social-media,
+.mobile-menu-open {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -550,5 +652,102 @@ footer {
   font-weight: 200;
   outline: none;
   font-size: 3rem;
+}
+
+.about-us-page-section {
+  text-align: center;
+  color: white;
+  margin-top: 150px;
+  width: 80vw;
+}
+
+.about-us-read-more-paragraph {
+  text-align: center;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.about-us-read-more {
+  margin: 0 0 50px 0;
+}
+
+.about-us-footer {
+  margin: 50px auto 0px auto;
+}
+
+@media (max-width: 1200px) {
+  .projects-grid {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+  .firsttogo-item {
+    display: none;
+  }
+  .project-item {
+    max-width: 34vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .website-nav-bar {
+    display: none;
+  }
+  .burger-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .secondtogo-item {
+    display: none;
+  }
+  .project-item {
+    max-width: 50vw;
+  }
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .footer-column {
+    margin-bottom: 30px;
+  }
+  .header-menu {
+    padding: 20px;
+  }
+  .header-menu-sticky {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .thirdtogo-item {
+    display: none;
+  }
+  .project-item {
+    max-width: 100vw;
+  }
+  .header-logo {
+    font-size: 1.2rem;
+  }
+  .read-more-header {
+    font-size: 1.1rem;
+  }
+  .read-more-paragraph {
+    font-size: 0.9rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
