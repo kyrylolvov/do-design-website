@@ -5,7 +5,7 @@ body {
   overflow-x: hidden;
   color: white;
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 1rem;d
 }
 
 .body-noscroll {
@@ -232,7 +232,6 @@ body {
 }
 
 .dropdown-invisible-open {
-  height: 250px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   overflow: hidden;
