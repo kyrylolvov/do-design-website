@@ -55,3 +55,25 @@ window.onload = function () {
   preloader.style.display = "none";
   contentWrapper.style.display = "block";
 };
+
+// Mobile Menu
+
+const burgerButton = document.querySelector(`.burger-menu`);
+const crossButton = document.querySelector(`.menu-close-cross`);
+const body = document.querySelector(`.body`);
+const mobileMenu = document.querySelector(`.mobile-menu`);
+
+const openMobileMenu = function () {
+  mobileMenu.style.transform = "translateX(0px)";
+  body.classList.add("body-noscroll");
+  contentWrapper.style.opacity = "0.7";
+};
+
+const closeMobileMenu = function () {
+  mobileMenu.style.transform = "translateX(320px)";
+  body.classList.remove("body-noscroll");
+  contentWrapper.style.opacity = "1";
+};
+
+burgerButton.addEventListener("click", openMobileMenu);
+crossButton.addEventListener("click", closeMobileMenu);
