@@ -16,6 +16,9 @@ body {
   font-weight: 300;
   font-size: 1rem;
 }
+.body-noscroll {
+  overflow-y: hidden;
+}
 .preloader-dots {
   margin: 0;
   background-color: $preloaderGray;
@@ -26,6 +29,8 @@ body {
   overflow-y: hidden;
 }
 .page-content-wrapper {
+  opacity: 1;
+  background-color: $preloaderGray;
   display: none;
 }
 .loader-ellips {
@@ -82,6 +87,79 @@ body {
   }
 }
 
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10200;
+  width: 260px;
+  height: 100%;
+  background-color: $preloaderGray;
+  padding: 75px 30px;
+  transition: transform 0.5s ease;
+  transform: translateX(320px);
+}
+
+.menu-close-cross {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 45px;
+  right: 50px;
+}
+.close-cross-bar {
+  display: block;
+  height: 1px;
+  background-color: white;
+  width: 100%;
+}
+.mobile-menu-list .nav-link {
+  font-size: 1.2rem;
+}
+.mobile-menu-list {
+  padding-bottom: 10px;
+  border-bottom: 1px white solid;
+}
+.mobile-menu-list .menu-point {
+  margin: 0 0 20px 0;
+}
+
+.close-cross-bar:first-child {
+  transform: rotate(45deg);
+}
+.close-cross-bar:last-child {
+  transform: rotate(-45deg);
+}
+.mobile-menu-contact {
+  padding: 20px 0;
+  border-bottom: 1px white solid;
+}
+.mobile-menu-social .footer-social-media {
+  padding: 20px 0;
+}
+.footer-social-media .fab {
+  font-size: 19px;
+}
+.mobile-menu-social .footer-social-media {
+  flex-direction: row;
+}
+.mobile-menu-social .footer-social-media .menu-point {
+  margin: 0 15px 0 0;
+}
+.burger-menu {
+  display: none;
+}
+
+.burger-menu-bar {
+  display: block;
+  width: 2.25rem;
+  height: 1px;
+  width: 22px;
+  background-color: #fff;
+}
+.burger-menu-bar:not(:last-child) {
+  margin-bottom: 5px;
+}
 .dropdown-invisible {
   height: 0px;
   transition: all 0.4s;
@@ -228,7 +306,7 @@ main {
 
 .latest-projects {
   width: 100vw;
-  height: 700px;
+  height: 800px;
   text-align: center;
 }
 
@@ -236,12 +314,13 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   max-width: 25vw;
+  height: 250px;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  height: 400px;
+  height: 500px;
   margin-bottom: 50px;
 }
 
@@ -350,7 +429,8 @@ footer {
 
 .footer-menu,
 .footer-contact,
-.footer-social-media {
+.footer-social-media,
+.mobile-menu-open {
   display: flex;
   flex-direction: column;
 }
@@ -410,4 +490,98 @@ footer {
   font-weight: 200;
   outline: none;
   font-size: 3rem;
+}
+
+// About us Page
+
+.about-us-page-section {
+  text-align: center;
+  color: white;
+  margin-top: 150px;
+  width: 80vw;
+}
+.about-us-read-more-paragraph {
+  text-align: center;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+.about-us-read-more {
+  margin: 0 0 50px 0;
+}
+.about-us-footer {
+  margin: 50px auto 0px auto;
+}
+.projects-page {
+  margin-top: 150px;
+  height: 1200px;
+}
+
+@media (max-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .firsttogo-item {
+    display: none;
+  }
+  .project-item {
+    max-width: 34vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .website-nav-bar {
+    display: none;
+  }
+  .burger-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .secondtogo-item {
+    display: none;
+  }
+  .project-item {
+    max-width: 50vw;
+  }
+  footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .footer-column {
+    margin-bottom: 30px;
+  }
+  .header-menu {
+    padding: 20px;
+  }
+  .header-menu-sticky {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .thirdtogo-item {
+    display: none;
+  }
+  .project-item {
+    max-width: 100vw;
+  }
+  .header-logo {
+    font-size: 1.2rem;
+  }
+  .read-more-header {
+    font-size: 1.1rem;
+  }
+  .read-more-paragraph {
+    font-size: 0.9rem;
+  }
 }
