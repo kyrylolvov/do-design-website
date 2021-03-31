@@ -5,7 +5,7 @@ body {
   overflow-x: hidden;
   color: white;
   font-weight: 300;
-  font-size: 1rem;d
+  font-size: 1rem;
 }
 
 .body-noscroll {
@@ -232,7 +232,7 @@ body {
 }
 
 .dropdown-invisible-open {
-  height: 200px;
+  height: 250px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   overflow: hidden;
@@ -408,6 +408,7 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   max-width: 25vw;
+  height: 250px;
 }
 
 .projects-grid {
@@ -675,6 +676,11 @@ footer {
 
 .about-us-footer {
   margin: 50px auto 0px auto;
+}
+
+.projects-page {
+  margin-top: 150px;
+  height: 1200px;
 }
 
 @media (max-width: 1200px) {
